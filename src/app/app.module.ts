@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ClipboardModule } from 'ngx-clipboard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,7 +25,8 @@ import { NewColorComponent } from './new-color/new-color.component';
     MatButtonModule,
     MatListModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

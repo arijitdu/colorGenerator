@@ -4,6 +4,7 @@ import { IColor } from '../interfaces/icolor';
 import { ColorModel } from '../models/color-model';
 import { ColorService } from '../services/color.service';
 import { HostListener } from '@angular/core';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-new-color',
@@ -60,4 +61,8 @@ export class NewColorComponent implements OnInit {
             this.values=0;
       }
   }
+}
+
+function copyHeroName() {
+  throw new Error('Function not implemented.');
 }
