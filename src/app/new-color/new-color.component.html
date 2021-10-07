@@ -1,0 +1,15 @@
+<section class="section1">
+  <div class="message" *ngIf="0">Color #jbfja copied to your clipboard</div>
+  <h1>Random Color Generate</h1>
+  <div class="colors">
+      <div class="color"*ngFor="let color of colorData; let i=index">
+          <div class="color-img" style="background-color:{{color?.hex_value}}"></div>
+          <div class="color-text">{{color?.hex_value}}</div>
+      </div>
+  </div>
+</section>
+<section class="section2"> 
+  <button class="btn" (click)="reloadCurrentPage()">Generate Paletts</button>
+  <p>Or just press the "Spacebar" to generate new paletts</p>
+  <h4>Click to copy individual color. Press "C" to copy paletts</h4>
+</section>
