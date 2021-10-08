@@ -4,7 +4,6 @@ import { IColor } from '../interfaces/icolor';
 import { ColorModel } from '../models/color-model';
 import { ColorService } from '../services/color.service';
 import { HostListener } from '@angular/core';
-import { ClipboardModule } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-new-color',
@@ -16,6 +15,7 @@ export class NewColorComponent implements OnInit {
   values!: number;
   logId = 0
   key: string | undefined;
+  valu!: string;
   constructor(public colorService: ColorService,
     private router: Router,
     private aRoute: ActivatedRoute) {
@@ -44,7 +44,7 @@ export class NewColorComponent implements OnInit {
       }
     })
   }
-  reloadCurrentPage() {
+  reloadCurrentPage(){
     window.location.reload();
    }
 
@@ -61,8 +61,19 @@ export class NewColorComponent implements OnInit {
             this.values=0;
       }
   }
-}
-
-function copyHeroName() {
-  throw new Error('Function not implemented.');
+  copyMessage(val: string){
+    this.valu=val;
+    this.values=1;
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+  }
 }

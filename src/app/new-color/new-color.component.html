@@ -1,16 +1,10 @@
 <section class="section1">
-  <div class="message" *ngIf="values==1">
-  Color 
-  <div class="message" *ngFor="let color of colorData; let i=index">
-    {{color?.hex_value}}
-  </div>
-   copied to your clipboard
-  </div>
+  <div class="message" *ngIf="values==1">Color {{valu}} copied to your clipboard</div>
   <h1>Random Color Generate</h1>
   <div class="colors">
       <div class="color"*ngFor="let color of colorData; let i=index">
           <div class="color-img" style="background-color:{{color?.hex_value}}"></div>
-          <div class="color-text">{{color?.hex_value}}</div>
+          <button (click)="copyMessage(color.hex_value)" class="color-text">{{color?.hex_value}}</button>
       </div>
   </div>
 </section>
