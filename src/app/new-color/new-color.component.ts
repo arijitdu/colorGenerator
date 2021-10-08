@@ -55,7 +55,7 @@ export class NewColorComponent implements OnInit {
             window.location.reload();
             break;
          case 'c': 
-            this.values=1;
+            this.values=2;
             break;
         default:
             this.values=0;
@@ -70,6 +70,21 @@ export class NewColorComponent implements OnInit {
     selBox.style.top = '0';
     selBox.style.opacity = '0';
     selBox.value = val;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+  }
+  copyMessageMultiple(val: string){
+    this.valu=val;
+    this.values=1;
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value += val;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
