@@ -1,8 +1,9 @@
 <section class="section1">
   <div class="message" *ngIf="values==1">Color {{valu}} copied to your clipboard</div>
-  <div class="message" *ngIf="values==2">Color<div class="message" *ngFor="let color of colorData; let i=index">
-    {{color?.hex_value}}
-  </div>
+  <div class="message" *ngIf="values==2">All Colors are these
+    <div class="message" *ngFor="let color of colorData; let i=index">
+      {{color?.hex_value}}
+    </div>
   </div>
   <h1>Random Color Generate</h1>
   <div class="colors">
